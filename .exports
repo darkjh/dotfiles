@@ -1,0 +1,18 @@
+# add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin
+
+# hadoop
+export HADOOP_INSTALL=/home/darkjh/hadoop-1.1.1
+export PATH=$PATH:$HADOOP_INSTALL/bin:$HADOOP_INSTALL/sbin
+
+# scala
+export SCALA_HOME=/home/darkjh/scala-2.9.3
+alias scala=$SCALA_HOME/bin/scala
+
+# fcitx input method
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+
+# amazon aws
+export EC2_HOME=/home/darkjh/amazon/ec2-api-tools-1.6.8.1/
