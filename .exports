@@ -1,3 +1,6 @@
+# always put this repo under HOME
+export DOTFILES=~/dotfiles
+
 # add RVM to PATH for scripting
 export PATH=$PATH:$HOME/.rvm/bin
 
