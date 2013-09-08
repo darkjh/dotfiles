@@ -19,6 +19,3 @@
 	nuke = !$DOTFILES/git/git-nuke
 [push]
 	default = simple
-[github]
-	user = darkjh
-	oauth-token = 9cfe870ffb47fed66f392929f4906fc3abd07c53
