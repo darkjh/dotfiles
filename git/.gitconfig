@@ -1,0 +1,24 @@
+[user]
+	name = Han JU
+	email = ju.han.felix@gmail.com
+[core]
+	editor = emacsclient -c
+	excludesfile = ~/.gitignore
+[color]
+	ui = always
+[alias]
+	st = status
+	s = status -sb
+	ci = commit -m
+	co = checkout
+	b = branch
+	df = diff --color --color-words --abbrev
+	l = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	count = shortlog -sn
+	delete-merged = !$DOTFILES/git/git-delete-local-merged
+	nuke = !$DOTFILES/git/git-nuke
+[push]
+	default = simple
+[github]
+	user = darkjh
+	oauth-token = 9cfe870ffb47fed66f392929f4906fc3abd07c53
