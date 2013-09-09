@@ -71,6 +71,9 @@ export PROMPT_COMMAND="_update_ps1_scala && echo -ne \"\033]0;${USER}@${HOSTNAME
 # . ~/projects/python/powerline/powerline/bindings/bash/powerline.sh
 # export PROMPT_COMMAND="echo -ne \"\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007\""
 
+# z
+. ~/projects/shell/z/z.sh
+
 # source other parts
 for file in ~/.{extra,exports,aliases,functions}; do
     [ -r "$file" ] && source "$file"
