@@ -20,7 +20,7 @@ LC_CTYPE=zh_CN.UTF-8 emacs --daemon
 fcitx &
 
 # read .Xresources file
-xrdb -merge /home/darkjh/.Xresources &
+xrdb -merge ~/.Xresources &
 
 # launch powerline server
 java -Xmx50m -cp ~/projects/scala/powerline-shell-scala/target/scala-2.9.2/powerline-shell-scala-assembly-0.1.0-SNAPSHOT.jar PowerlineServer
