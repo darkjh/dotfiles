@@ -1,0 +1,209 @@
+# run in console out of X
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# behaviour
+update_interval 1.0
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+#font
+use_xft yes
+xftfont Terminus:size=9
+
+# JSON for i3bar
+# Stuff after 'TEXT' will be formatted on screen
+
+# Possible variables to be used:
+#
+#      Variable         Arguments                  Description
+#  acpiacadapter                     ACPI ac adapter state.
+#  acpifan                           ACPI fan state
+#  acpitemp                          ACPI temperature.
+#  adt746xcpu                        CPU temperature from therm_adt746x
+#  adt746xfan                        Fan speed from therm_adt746x
+#  battery           (num)           Remaining capasity in ACPI or APM
+#                                    battery. ACPI battery number can be
+#                                    given as argument (default is BAT0).
+#  buffers                           Amount of memory buffered
+#  cached                            Amount of memory cached
+#  color             (color)         Change drawing color to color
+#  cpu                               CPU usage in percents
+#  cpubar            (height)        Bar that shows CPU usage, height is
+#                                    bar's height in pixels
+#  downspeed         net             Download speed in kilobytes
+#  downspeedf        net             Download speed in kilobytes with one
+#                                    decimal
+#  exec              shell command   Executes a shell command and displays
+#                                    the output in torsmo. warning: this
+#                                    takes a lot more resources than other
+#                                    variables. I'd recommend coding wanted
+#                                    behaviour in C and posting a patch :-).
+#  execi             interval, shell Same as exec but with specific interval.
+#                    command         Interval can't be less than
+#                                    update_interval in configuration.
+#  fs_bar            (height), (fs)  Bar that shows how much space is used on
+#                                    a file system. height is the height in
+#                                    pixels. fs is any file on that file
+#                                    system.
+#  fs_free           (fs)            Free space on a file system available
+#                                    for users.
+#  fs_free_perc      (fs)            Free percentage of space on a file
+#                                    system available for users.
+#  fs_size           (fs)            File system size
+#  fs_used           (fs)            File system used space
+#  hr                (height)        Horizontal line, height is the height in
+#                                    pixels
+#  i2c               (dev), type, n  I2C sensor from sysfs (Linux 2.6). dev
+#                                    may be omitted if you have only one I2C
+#                                    device. type is either in (or vol)
+#                                    meaning voltage, fan meaning fan or temp
+#                                    meaning temperature. n is number of the
+#                                    sensor. See /sys/bus/i2c/devices/ on
+#                                    your local computer.
+#  kernel                            Kernel version
+#  loadavg           (1), (2), (3)   System load average, 1 is for past 1
+#                                    minute, 2 for past 5 minutes and 3 for
+#                                    past 15 minutes.
+#  machine                           Machine, i686 for example
+#  mails                             Mail count in mail spool. You can use
+#                                    program like fetchmail to get mails from
+#                                    some server using your favourite
+#                                    protocol. See also new_mails.
+#  mem                               Amount of memory in use
+#  membar            (height)        Bar that shows amount of memory in use
+#  memmax                            Total amount of memory
+#  memperc                           Percentage of memory in use
+#  new_mails                         Unread mail count in mail spool.
+#  nodename                          Hostname
+#  outlinecolor      (color)         Change outline color
+#  pre_exec          shell command   Executes a shell command one time before
+#                                    torsmo displays anything and puts output
+#                                    as text.
+#  processes                         Total processes (sleeping and running)
+#  running_processes                 Running processes (not sleeping),
+#                                    requires Linux 2.6
+#  shadecolor        (color)         Change shading color
+#  stippled_hr       (space),        Stippled (dashed) horizontal line
+#                    (height)
+#  swapbar           (height)        Bar that shows amount of swap in use
+#  swap                              Amount of swap in use
+#  swapmax                           Total amount of swap
+#  swapperc                          Percentage of swap in use
+#  sysname                           System name, Linux for example
+#  time              (format)        Local time, see man strftime to get more
+#                                    information about format
+#  totaldown         net             Total download, overflows at 4 GB on
+#                                    Linux with 32-bit arch and there doesn't
+#                                    seem to be a way to know how many times
+#                                    it has already done that before torsmo
+#                                    has started.
+#  totalup           net             Total upload, this one too, may overflow
+#  updates                           Number of updates (for debugging)
+#  upspeed           net             Upload speed in kilobytes
+#  upspeedf          net             Upload speed in kilobytes with one
+#                                    decimal
+#  uptime                            Uptime
+#  uptime_short                      Uptime in a shorter format
+#
+#  seti_prog                         Seti@home current progress
+#  seti_progbar      (height)        Seti@home current progress bar
+#  seti_credit                       Seti@hoome total user credit
+
+
+# variable is given either in format $variable or in ${variable}. Latter
+# allows characters right after the variable and must be used in network
+# stuff because of an argument
+#${font Dungeon:style=Bold:pixelsize=10}I can change the font as well
+#${font Verdana:size=10}as many times as I choose
+#${font Perry:size=10}Including UTF-8,
+# stuff after 'TEXT' will be formatted on screen
+#${font Grunge:size=12}${time %a  %b  %d}${alignr -25}${time %k:%M}
+
+
+TEXT
+
+
+
+[ { "full_text" : "RAM ${mem}/${memmax} - ${memperc}% " , "color" : "\#F26C91" },
+  { "full_text" : " CPU ${cpu}% - ${freq}Mhz @${acpitemp}°C " , "color" : "\#C89BDC" },
+  { "full_text" : " HDD root-${fs_free_perc /}% home-${fs_free_perc /home}% var-${fs_free_perc /var}% " },
+  { "full_text" : " BAT ${battery} " , "color" : "\#CCFF33"},
+  { "full_text" : " ${time %F %H:%M} " , "color" : "\#009933"}
+],
+
+#${font Ubuntu:style=Regular:pixelsize=15}${alignc}${time %H:%M:%S}
+###${font WenQuanYi Micro Hei Mono:pixelsize=20}
+#${alignc}${time %b %d %a }
+#${alignc}${time W%W - %Y}
+
+#${font Ubuntu:size=8}${color white}SYSTEM ${hr 2}${color}
+#Hostname: $alignr$nodename
+#Kernel: $alignr$kernel
+#Uptime: $alignr$uptime
+#Battery: $alignr$battery
+#IP:${alignr}${addr wlan0}
+#CPU:${alignr}${cpu} %
+#Frequence:${alignr}${freq} Mhz
+#Processes: ${alignr}$processes ($running_processes running)
+
+#${font Ubuntu:size=8}${color white}CPU INFO ${hr 2}${color}
+
+#Fan Speed ${alignr}${acpifan}
+#Temp ${alignr}${acpitemp}
+
+#CPU1 ${alignr}${cpu cpu1}%
+#${cpubar cpu1}
+#CPU2 ${alignr}${cpu cpu2}%
+#${cpubar cpu2}
+#CPU3 ${alignr}${cpu cpu3}%
+#${cpubar cpu3}
+#CPU4 ${alignr}${cpu cpu4}%
+#${cpubar cpu4}
+
+#${font Ubuntu:size=8}${color white}RAM & DISK ${hr 2}${color}
+#Ram ${alignr}$mem / $memmax ($memperc%)
+#${membar 4}
+#Swap ${alignr}$swap / $swapmax ($swapperc%)
+#${swapbar 4}
+
+#Highest CPU $alignr CPU% MEM%
+#${top name 1}$alignr${top cpu 1}${top mem 1}
+#${top name 2}$alignr${top cpu 2}${top mem 2}
+#${top name 3}$alignr${top cpu 3}${top mem 3}
+#Highest MEM $alignr CPU% MEM%
+#${top_mem name 1}$alignr${top_mem cpu 1}${top_mem mem 1}
+#${top_mem name 2}$alignr${top_mem cpu 2}${top_mem mem 2}
+#${top_mem name 3}$alignr${top_mem cpu 3}${top_mem mem 3}
+#HDD ${alignr} ${diskio_read}(Read) ${diskio_write}(Write)
+
+
+#${color white}NETWORK ${hr 2}${color}
+#Down ${color orange} ${downspeed wlan0} ${color} ${alignr}Up ${upspeed wlan0}
+#${downspeedgraph wlan0 25,100} ${alignr}${upspeedgraph wlan0 25,100}
+#Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
+
+
+
+#${color white}FILE SYSTEM ${hr 2}${color}
+#Root: ${alignr}${color red}${fs_used /}${color} / ${fs_size /}
+#${fs_bar 4 /}
+#Home: ${alignr}${color red}${fs_used /home}${color} / ${fs_size /home}
+#${fs_bar 4 /home}
+#Var: ${alignr}${color red}${fs_used /var}${color} / ${fs_size /var}
+#${fs_bar 4 /var}
+
+
+
