@@ -19,3 +19,6 @@ export XMODIFIERS="@im=fcitx"
 
 # amazon aws
 export EC2_HOME=~/amazon/ec2-api-tools-1.6.8.1/
+
+# GOPATH
+export GOPATH=~/projects/go/
