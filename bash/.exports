@@ -22,3 +22,5 @@ export EC2_HOME=~/amazon/ec2-api-tools-1.6.8.1/
 
 # GOPATH
 export GOPATH=~/projects/go/
+export GOROOT=/usr/lib/go/
+export PATH=$PATH:$GOPATH/bin
