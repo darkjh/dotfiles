@@ -74,6 +74,11 @@ export PROMPT_COMMAND="_update_ps1_scala && echo -ne \"\033]0;${USER}@${HOSTNAME
 # z
 . ~/projects/shell/z/z.sh
 
+# Turn off XON/XOFF flow control
+# thus enables C-s/C-r command search
+# Credit: http://stackoverflow.com/questions/791765
+stty -ixon
+
 # source other parts
 for file in ~/.{extra,exports,aliases,functions}; do
     [ -r "$file" ] && source "$file"
