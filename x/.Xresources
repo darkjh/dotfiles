@@ -7,8 +7,8 @@ URxvt.scrollstyle:rxvt
 URxvt.scrollBar: off
 URxvt.borderless: true
 URxvt.inputMethod: fcitx
-URxvt.font: xft:Terminus:pixelsize=14:antialias=false:hinting=false:autohint=false, xft:Terminus (TTF) for Powerline:pixelsize=16:antialias=true:hinting=true:autohint=true
-URxvt.boldFont: xft:Terminus:bold:pixelsize=14:antialias=false:hinting=false:autohint=false, xft:Terminus (TTF) for Powerline:bold:pixelsize=16:antialias=true:hinting=true:autohint=true
+URxvt.font: -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+URxvt.boldFont: -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
 URxvt.geometry: 80x60
 
 
