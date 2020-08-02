@@ -61,19 +61,6 @@ if [ "$PS1" ]; then
     fi
 fi
 
-# prompt
-# powerline
-function _update_ps1_scala() {
-    export PS1="$(~/projects/scala/powerline-shell-scala/target/powerline-client $?)"
-}
-# override PS1
-export PROMPT_COMMAND="_update_ps1_scala && echo -ne \"\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007\""
-# . ~/projects/python/powerline/powerline/bindings/bash/powerline.sh
-# export PROMPT_COMMAND="echo -ne \"\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007\""
-
-# z
-. ~/projects/shell/z/z.sh
-
 # Turn off XON/XOFF flow control
 # thus enables C-s/C-r command search
 # Credit: http://stackoverflow.com/questions/791765
