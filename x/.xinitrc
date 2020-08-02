@@ -8,25 +8,16 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 # backlight
-xbacklight -set 30
-
-#export LANG=zh_CN.UTF-8
-#export LC_ALL="zh_CN.UTF-8"
-
-# emacs server
-LC_CTYPE=zh_CN.UTF-8 emacs --daemon
+xbacklight -set 12
 
 # fcitx
 fcitx &
 
+# network manager
+nm-applet --no-agent &
+
 # read .Xresources file
 xrdb -merge ~/.Xresources &
-
-# launch powerline server
-java -Xmx50m -cp ~/projects/scala/powerline-shell-scala/target/scala-2.9.2/powerline-shell-scala-assembly-0.1.0-SNAPSHOT.jar PowerlineServer
-
-# goagent for GFW
-# python2 /home/darkjh/python/goagent/local/proxy.py &
 
 # start i3wm
 exec i3
