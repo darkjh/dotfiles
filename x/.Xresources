@@ -7,8 +7,8 @@ URxvt.scrollstyle:rxvt
 URxvt.scrollBar: off
 URxvt.borderless: true
 URxvt.inputMethod: fcitx
-URxvt.font: -xos4-terminus-medium-*-*-*-32-*-*-*-*-*-*-*
-URxvt.boldFont: -xos4-terminus-bold-*-*-*-32-*-*-*-*-*-*-*
+URxvt.font:xft:xos4 Terminus:style=Regular:pixelsize=17
+URxvt.boldFont:xft:xos4 Terminus:style=Bold:pixelsize=17
 
 
 ! --- Color scheme -------------------------------------------------------------
