@@ -15,6 +15,7 @@
 	df = diff --color --color-words --abbrev
 	l = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	count = shortlog -sn
+  recent = for-each-ref --sort=-committerdate refs/heads/ --count 20
 	delete-merged = !$DOTFILES/git/git-delete-local-merged
 	nuke = !$DOTFILES/git/git-nuke
 [push]
